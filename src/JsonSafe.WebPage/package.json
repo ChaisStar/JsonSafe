@@ -1,0 +1,47 @@
+{
+  "name": "json-safe",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "webpack --mode development",
+    "publish": "webpack --mode production"
+  },
+  "devDependencies": {
+    "@types/clean-webpack-plugin": "^0.1.2",
+    "@types/copy-webpack-plugin": "^4.4.1",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/html-webpack-template": "^6.0.3",
+    "@types/node": "^10.5.5",
+    "@types/vue-router": "^2.0.0",
+    "@types/webpack": "^4.4.8",
+    "awesome-typescript-loader": "^5.2.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "node": "^10.7.0",
+    "ts-loader": "^4.4.2",
+    "ts-nameof": "^1.0.0",
+    "ts-node": "^7.0.0",
+    "ttypescript": "^1.5.4",
+    "typescript": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "vue-loader": "^15.2.6",
+    "vue-property-decorator": "^7.0.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
+    "tslint": "^5.11.0",
+    "tslint-webpack-plugin": "^1.2.2"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-class": "^0.3.1"
+  },
+  "author": "chaisstar"
+}

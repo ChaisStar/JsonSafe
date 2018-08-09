@@ -1,0 +1,15 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {
+    "no-console": false
+  },
+  "rules": {
+    "no-console": false
+  },
+  "tslint": {
+    "enable": true,
+    "run": "onType",
+    "autoFixOnSave": true
+  }
+}

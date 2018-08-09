@@ -1,0 +1,25 @@
+<div>
+    <div class="login-form col-md-3">
+
+        <h2 class="text-center">Sign In</h2>
+        <div class="form-group">
+            <div class="input-group">
+                <input v-model="username" type="text" class="form-control" placeholder="Username" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <input v-model="password" type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <button @click="login" class="btn btn-primary btn-block">Log in</button>
+        </div>
+        <div class="clearfix">
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <p class="text-center small">Don't have an account!
+            <router-link to="/signup">Sign up here</router-link>.</p>
+    </div>
+</div>

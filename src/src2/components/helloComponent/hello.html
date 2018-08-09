@@ -1,0 +1,18 @@
+<div>
+    <div class="greeting">Hello {{name}}{{getExclamationMarks()}}</div>
+    <button @click="decrement">-</button>
+    <button @click="increment">+</button>
+    <div>
+        <input v-model="username" type="text" placeholder="username" />
+        <input v-model="password" type="password" placeholder="password" />
+        <button @click="loginAsync">Login</button>
+    </div>
+    <div>
+        <input v-model="resultUsername" type="text" placeholder="username" readonly/>
+        <input v-model="resultToken" type="text" placeholder="token" readonly/>
+    </div>
+    <div>
+        <button @click="getJsonsAsync">GetJsons</button>
+        <textarea v-model="jsons" readonly></textarea>
+    </div>
+</div>
