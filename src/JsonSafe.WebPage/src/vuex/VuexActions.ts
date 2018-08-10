@@ -46,7 +46,7 @@ export const actions: IVuexActions = {
     console.log(response);
     context.commit(nameof<IVuexMutations>((m) => m.updateUserJsons), response);
   },
-  initialiseStore: (context) => {
+  initializeStore: (context) => {
     try {
       const username = browserStorage.getValue(browserStorageUsername);
       const token = browserStorage.getValue(browserStorageToken);
@@ -71,5 +71,8 @@ export const actions: IVuexActions = {
 
   createJson: async (context, request) => {
     await jsonApiService.createJson(context.state.userModel.token, request);
+  },
+  deleteJson: async (context, jsonId) => {
+    await jsonApiService.deleteJson(context.state.userModel.token, jsonId);
   },
 };

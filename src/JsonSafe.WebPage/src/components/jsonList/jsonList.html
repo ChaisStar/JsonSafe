@@ -1,4 +1,7 @@
 <div>
     <p>Hello {{username}}</p>
+    <ul v-for="json in jsons">
+        <json-list-item :json="json"></json-list-item>
+    </ul>
     <button @click="getJsons" class="btn btn-primary btn-block">getJsons</button>
 </div>

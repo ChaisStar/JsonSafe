@@ -26,6 +26,6 @@ export const main = new Vue({
     </div>`,
     beforeCreate() {
       console.log(this.$store);
-      this.$store.dispatch(nameof<IVuexActions>((m) => m.initialiseStore));
+      this.$store.dispatch(nameof<IVuexActions>((m) => m.initializeStore));
     },
 });
