@@ -12,8 +12,10 @@ export default class JsonListItem extends Vue implements IJsonListItem {
   @Prop() public json!: GetJsonResponseDto;
 
   @Action(nameof<IVuexActions>((a) => a.deleteJson)) private delete!: (jsonId: string) => void;
+  @Action(nameof<IVuexActions>((a) => a.getJsons)) private getJsons!: () => void;
 
   public deleteJson(): void {
     this.delete(this.json.id);
+    this.getJsons();
   }
 }

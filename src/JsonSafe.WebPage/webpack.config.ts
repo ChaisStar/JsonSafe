@@ -5,8 +5,6 @@ import TslintWebpackPlugin from "tslint-webpack-plugin";
 import { VueLoaderPlugin } from "vue-loader";
 import * as webpack from "webpack";
 
-// const { VueLoaderPlugin } = require("vue-loader");
-
 const indexHtmlBody = "<div id='app'></div>";
 
 const indexPluginOptions: HtmlWebpackPlugin.Options = {
@@ -46,8 +44,6 @@ const config: webpack.Configuration = {
         test: /\.vue$/,
       },
       {
-        // loader: "less-loader",
-        // options: {},
         test: /\.less$/,
         use: ["vue-style-loader", "css-loader", "less-loader"],
       },
