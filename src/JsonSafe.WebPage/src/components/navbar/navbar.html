@@ -1,30 +1,25 @@
 <div>
-    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-md">
-        <a class="navbar-brand  text-success" href="#">JsonSafe</a>
-        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link text-success" href="#">Dashboard
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/default" class="nav-link text-success">Profile</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/jsonEditor" class="nav-link text-success">Json Editor</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link to="/jsonList" class="nav-link text-success">Json List</router-link>
-                </li>
-            </ul>
-            <form v-if="isLoggedIn" class="form-inline my-2 my-lg-0 mr-sm-2">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <router-link v-if="!isLoggedIn" to="/login" class="btn btn-success my-2 my-sm-0 mr-sm-2">Login</router-link>
-            <router-link v-if="!isLoggedIn" to="/signup" class="btn btn-outline-success my-2 my-sm-0 mr-sm-2">Sign up</router-link>
-            <button v-if="isLoggedIn" @click="logout" class="btn btn-danger my-2 my-sm-0 mr-sm-2">Logout</button>
-        </div>
-    </nav>
+    <a-menu mode="horizontal">
+        <a-menu-item>
+            <router-link to="#">Dashboard</router-link>
+        </a-menu-item>
+        <a-menu-item>
+            <router-link to="/default">Profile</router-link>
+        </a-menu-item>
+        <a-menu-item>
+            <router-link to="/jsonEditor">Json Editor</router-link>
+        </a-menu-item>
+        <a-menu-item>
+            <router-link to="/jsonList">Json List</router-link>
+        </a-menu-item>
+        <a-menu-item v-if="!isLoggedIn" class="float-right">
+            <router-link to="/login">Login</router-link>
+        </a-menu-item>
+        <a-menu-item v-if="!isLoggedIn" class="float-right">
+            <router-link to="/signup">Sign up</router-link>
+        </a-menu-item>
+        <a-menu-item v-if="isLoggedIn" @click="logout" class="float-right">
+            <span>Logout</span>
+        </a-menu-item>
+    </a-menu>
 </div>

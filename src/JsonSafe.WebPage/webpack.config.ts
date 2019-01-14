@@ -12,8 +12,9 @@ const indexPluginOptions: HtmlWebpackPlugin.Options = {
   filename: "index.html",
   inject: false,
   links: [
-    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.19.2/jsoneditor.min.css",
+    // "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+    // "https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.19.2/jsoneditor.min.css",
+    // "https://unpkg.com/element-ui/lib/theme-chalk/index.css",
   ],
   minify: false,
   template: require("html-webpack-template"),
@@ -29,6 +30,19 @@ const config: webpack.Configuration = {
   entry: "./src/main.ts",
   module: {
     rules: [
+      {
+        enforce: "pre",
+        test: /\.ts$/,
+        use: [
+          {
+            loader: "tslint-loader",
+            options: {
+              emitErrors: true,
+              failOnHint: true,
+             },
+          },
+        ],
+      },
       {
         exclude: /node_modules/,
         loader: "ts-loader",
@@ -46,6 +60,14 @@ const config: webpack.Configuration = {
       {
         test: /\.less$/,
         use: ["vue-style-loader", "css-loader", "less-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        loader: "url-loader?limit=30000&name=[name]-[hash].[ext]",
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       },
     ],
   },

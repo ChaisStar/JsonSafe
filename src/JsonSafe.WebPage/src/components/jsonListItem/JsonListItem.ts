@@ -9,9 +9,17 @@ import { IVuexActions } from "../../vuex/interfaces/IVuexActions";
 
 @Component
 export default class JsonListItem extends Vue implements IJsonListItem {
+  public get name(): string {
+    return this.json.name || "Unnamed";
+  }
+  public get description(): string {
+    return `Created - ${this.json.created} Updated - {this.json.updated}`;
+  }
   @Prop() public json!: GetJsonResponseDto;
 
-  @Action(nameof<IVuexActions>((a) => a.deleteJson)) private delete!: (jsonId: string) => void;
+  @Action(nameof<IVuexActions>((a) => a.deleteJson)) private delete!: (
+    jsonId: string,
+  ) => void;
   @Action(nameof<IVuexActions>((a) => a.getJsons)) private getJsons!: () => void;
 
   public deleteJson(): void {

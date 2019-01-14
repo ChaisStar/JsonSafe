@@ -1,4 +1,25 @@
 <div>
+    <a-form class="login-form">
+        <a-form-item label="Username">
+            <a-input v-model=username type="text" placeholder="Username" required="required" />
+        </a-form-item>
+        <a-form-item label="Password">
+            <a-input v-model="password" type="password" class="form-control" placeholder="Password" required="required" />
+        </a-form-item>
+        <a-form-item>
+            <a-button @click="login" type="primary" htmlType="submit">Log in</a-button>
+        </a-form-item>
+        <a-form-item>
+            <a class='login-form-forgot' href="#">Forgot Password?</a>
+        </a-form-item>
+        <a-form-item>
+            <p class="text-center small">Don't have an account!
+                <router-link to="/signup">Sign up here</router-link>.</p>
+        </a-form-item>
+    </a-form>
+</div>
+
+<!-- <div>
     <div class="login-form col-md-3">
 
         <h2 class="text-center">Sign In</h2>
@@ -22,4 +43,4 @@
         <p class="text-center small">Don't have an account!
             <router-link to="/signup">Sign up here</router-link>.</p>
     </div>
-</div>
+</div> -->

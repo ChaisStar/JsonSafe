@@ -2,8 +2,8 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Default from "./components/default/default.vue";
-import JsonEditor from "./components/jsonEditor/jsonEditor.vue";
 import JsonList from "./components/jsonList/jsonList.vue";
+import JsonTextEditor from "./components/jsonTextEditor/jsonTextEditor.vue";
 import Login from "./components/login/login.vue";
 import Signup from "./components/signup/signup.vue";
 
@@ -19,8 +19,8 @@ export default new VueRouter({
       path: "/login",
     },
     {
-      component: JsonEditor,
-      name: nameof<JsonEditor>(),
+      component: JsonTextEditor,
+      name: nameof<JsonTextEditor>(),
       path: "/jsonEditor",
     },
     {

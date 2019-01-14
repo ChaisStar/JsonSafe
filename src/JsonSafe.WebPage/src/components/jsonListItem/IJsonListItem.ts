@@ -2,5 +2,7 @@ import { GetJsonResponseDto } from "../../models/dtos/jsonDtos/GetJsonResponseDt
 
 export interface IJsonListItem {
   json: GetJsonResponseDto;
+  name: string;
+  description: string;
   deleteJson: () => void;
 }
