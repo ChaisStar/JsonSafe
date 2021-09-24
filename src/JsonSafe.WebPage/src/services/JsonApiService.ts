@@ -22,4 +22,8 @@ export class JsonApiService implements IJsonApiService {
       token,
     );
   }
+
+  public deleteJson(token: string, jsonId: string): Promise<void> {
+    return this.httpClient.deleteAuthorizedAsync(`${this.relativeUri}/${jsonId}`, token);
+  }
 }

@@ -1,0 +1,29 @@
+<div style="background:#ECECEC; padding:30px">
+    <a-card  :bordered="false" style="width: 300px">
+        <h5 class="card-title">{{json.id}}</h5>
+        <p class="card-text">{{json.json}}</p>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <button @click="deleteJson" class="btn btn-danger">Delete</button>
+
+        <a-card-meta v-bind:title="name"
+            v:bind:description="description">
+                
+        </a-card-meta>
+    </a-card>
+  </div>
+
+<!-- <div class="card bg-dark">
+    <div class="card-header">
+        <span v-if="json.name">{{json.name}}</span>
+        <span v-else>Unnamed</span>
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{json.id}}</h5>
+        <p class="card-text">{{json.json}}</p>
+        <a href="#" class="btn btn-primary">Edit</a>
+        <button @click="deleteJson" class="btn btn-danger">Delete</button>
+    </div>
+    <div class="card-footer text-muted">
+        Created - {{json.created}} Updated - {{json.updated}}
+    </div>
+</div> -->

@@ -6,7 +6,7 @@ import { RegisterUserRequestDto } from "../../models/dtos/userDtos/RegisterUserR
 import { IVuexState } from "./IVuexState";
 
 export interface IVuexActions extends ActionTree<IVuexState, any> {
-  initialiseStore: (context: ActionContext<IVuexState, any>) => void;
+  initializeStore: (context: ActionContext<IVuexState, any>) => void;
   login: (
     context: ActionContext<IVuexState, any>,
     loginUserRequestDto: LoginUserRequestDto,
@@ -18,4 +18,5 @@ export interface IVuexActions extends ActionTree<IVuexState, any> {
     registerUserRequestDto: RegisterUserRequestDto,
   ) => void;
   createJson: (context: ActionContext<IVuexState, any>, request: CreateJsonRequestDto) => void;
+  deleteJson: (context: ActionContext<IVuexState, any>, jsonId: string) => void;
 }

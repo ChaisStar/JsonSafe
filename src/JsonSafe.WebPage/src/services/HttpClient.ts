@@ -78,4 +78,22 @@ export class HttpClient implements IHttpClient {
       xhttp.send(JSON.stringify(request));
     });
   }
+
+  public deleteAuthorizedAsync(url: string, token: string): Promise<void> {
+    return new Promise<void>((resolve, reject) => {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = () => {
+        if (xhttp.status === 200) {
+          resolve();
+        } else {
+          console.log(`Request failed.  Returned status of ${xhttp.status}`);
+          console.log(xhttp.response);
+          reject(new Error(`XMLHttpRequest Error: ${xhttp.statusText}`));
+        }
+      };
+      xhttp.open("DELETE", `${url}`);
+      xhttp.setRequestHeader("Authorization", `Bearer ${token}`);
+      xhttp.send();
+    });
+  }
 }

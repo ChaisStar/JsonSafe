@@ -5,8 +5,6 @@ import TslintWebpackPlugin from "tslint-webpack-plugin";
 import { VueLoaderPlugin } from "vue-loader";
 import * as webpack from "webpack";
 
-// const { VueLoaderPlugin } = require("vue-loader");
-
 const indexHtmlBody = "<div id='app'></div>";
 
 const indexPluginOptions: HtmlWebpackPlugin.Options = {
@@ -14,8 +12,9 @@ const indexPluginOptions: HtmlWebpackPlugin.Options = {
   filename: "index.html",
   inject: false,
   links: [
-    "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
-    "https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.19.2/jsoneditor.min.css",
+    // "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css",
+    // "https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/5.19.2/jsoneditor.min.css",
+    // "https://unpkg.com/element-ui/lib/theme-chalk/index.css",
   ],
   minify: false,
   template: require("html-webpack-template"),
@@ -32,6 +31,19 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.ts$/,
+        use: [
+          {
+            loader: "tslint-loader",
+            options: {
+              emitErrors: true,
+              failOnHint: true,
+             },
+          },
+        ],
+      },
+      {
         exclude: /node_modules/,
         loader: "ts-loader",
         options: {
@@ -46,10 +58,16 @@ const config: webpack.Configuration = {
         test: /\.vue$/,
       },
       {
-        // loader: "less-loader",
-        // options: {},
         test: /\.less$/,
         use: ["vue-style-loader", "css-loader", "less-loader"],
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        loader: "url-loader?limit=30000&name=[name]-[hash].[ext]",
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       },
     ],
   },
